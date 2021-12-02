@@ -36,9 +36,9 @@ node {
 			
 			// need to pull out assigned username
 			if (isUnix()) {
-				rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:retrieve  -u ${HUB_ORG} -k manifest/package.xml -d force-app/"
+				rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:retrieve  -u ${HUB_ORG} -k manifest/package.xml -r force-app/"
 			}else{
-			   rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:retrieve  -u ${HUB_ORG} -k manifest/package.xml -d force-app/"
+			   rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:retrieve  -u ${HUB_ORG} -k manifest/package.xml -r force-app/"
 			}
 			  
             printf rmsg
