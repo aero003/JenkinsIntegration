@@ -36,14 +36,16 @@ node {
 			
 			// need to pull out assigned username
 			if (isUnix()) {
-				rmsg = sh returnStdout: true, script: "${toolbelt} force:mdapi:retrieve  -u ${HUB_ORG} -k manifest/package.xml -r manifest/"
+				rtc = sh returnStdout: true, script: "${toolbelt} force:mdapi:retrieve  -u ${HUB_ORG} -k manifest/package.xml -r manifest/"
 			}else{
-			   rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:retrieve  -u ${HUB_ORG} -k manifest/package.xml -r manifest/"
+			   rtc = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:retrieve  -u ${HUB_ORG} -k manifest/package.xml -r manifest/"
 			}
-			  
-            printf rmsg
+
+            uz = bat returnStdout: true, script: "\"${toolbelt}\" unzip manifest/unpackaged.zip"  
+            sc = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:convert -r unpackaged/ -d force-app/"  
+            //printf rmsg
             println('Hello from a Job DSL script!')
-            println(rmsg)
+            println(rtc)
         }
     }
 }
