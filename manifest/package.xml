@@ -4,10 +4,6 @@
         <members>*</members>
         <name>ApexClass</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
     <!--<types>
         <members>*</members>
         <name>ApexComponent</name>
