@@ -37,11 +37,11 @@ node {
 			// need to pull out assigned username
 			if (isUnix()) {
 				rtc = sh returnStdout: true, script: "${toolbelt} force:mdapi:retrieve  -u ${HUB_ORG} -k manifest/package.xml -r manifest/"
-                uz = bat returnStdout: true, script: "${toolbelt} unzip manifest/unpackaged.zip"  
+                uz = bat returnStdout: true, script: "${toolbelt}unzip manifest/unpackaged.zip -d"  
                 sc = bat returnStdout: true, script: "${toolbelt} force:mdapi:convert -r unpackaged/ -d force-app/"
 			}else{
 			   rtc = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:retrieve  -u ${HUB_ORG} -k manifest/package.xml -r manifest/"
-               uz = bat returnStdout: true, script: "\"${toolbelt}\" unzip manifest/unpackaged.zip"  
+               uz = bat returnStdout: true, script: "\"${toolbelt}\" unzip manifest/unpackaged.zip -d"  
                sc = bat returnStdout: true, script: "\"${toolbelt}\" force:mdapi:convert -r unpackaged/ -d force-app/"
 			}
 
