@@ -1,0 +1,3 @@
+@isTest
+global class PortalWebServiceMock {
+}
