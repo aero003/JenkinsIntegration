@@ -5,7 +5,7 @@ static testmethod void test() {
 
 // Create test accounts to be updated
 // by the batch job.
-//Deployed
+//Deploy metadata from DX
 
 
 
